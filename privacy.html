@@ -15,6 +15,73 @@
       line-height: 1.6;
     }
 
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+      color: #ffd700;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ff6347;
+      color: #fff;
+    }
+
+    /* Aktif sayfa */
+    nav a.active {
+      background-color: #ffd700;
+      color: #1f1c2c;
+    }
+
+    /* Hamburger menu (mobil) */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== MAIN ===== */
     main {
       max-width: 800px;
       margin: 40px auto;
@@ -91,6 +158,33 @@
 </head>
 
 <body>
+
+<!-- ===== HEADER ===== -->
+<div id="site-header"></div>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+
+      // Aktif sayfa
+      const links = document.querySelectorAll('#site-header nav a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.classList.add('active');
+        }
+      });
+
+      // Hamburger toggle
+      const nav = document.querySelector('#site-header nav');
+      const toggleBtn = document.createElement('div');
+      toggleBtn.classList.add('menu-toggle');
+      toggleBtn.innerHTML = '&#9776;';
+      toggleBtn.onclick = () => nav.classList.toggle('show');
+      document.getElementById("site-header").prepend(toggleBtn);
+    });
+</script>
 
 <main>
   <h1>Privacy Policy</h1>

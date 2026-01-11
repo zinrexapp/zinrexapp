@@ -5,95 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Zinrex</title>
 
-  <style>
+    <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000000;
+      background: #000;
       color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
+    /* ===== HEADER ===== */
     header {
       text-align: center;
       padding: 20px;
-      background-color: rgba(0,0,0,0.7);
-      width: 100%;  
+      background-color: rgba(0,0,0,0.8);
     }
 
     header h1 {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 2.2rem;
-      color: #ffffff;
     }
 
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
+      gap: 12px;
     }
 
     nav a {
       color: #ffd700;
       text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      background-color: #ff6347;
+      background: #ff6347;
       color: #fff;
     }
 
     nav a.active {
-      background-color: #ffd700;
-      color: #1f1c2c;
+      background: #ffd700;
+      color: #000;
     }
 
+    /* ===== MAIN CONTENT ===== */
     main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      display: block;
+      padding: 40px 20px;
     }
 
-    main img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
+    .content {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.03);
+      padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
+    .main-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .updated {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      font-size: 1.4rem;
+      color: #ffd700;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    ul {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #ffd700;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: rgba(0,0,0,0.5);
+      padding: 15px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
   <h1>Welcome to Zinrex</h1>
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="index.html">Home</a>
+    <a href="privacy.html" class="active">Privacy Policy</a>
     <a href="child-safety.html">Child Safety</a>
     <a href="delete-account.html">Delete Account</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-
 <main>
   <h1 class="main-title">Contact Us</h1>
   <p>Email: <a href="mailto:info@zinrex.com">info@zinrex.com</a></p>

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zinrex Official</title>
-
   <style>
     body {
       margin: 0;
@@ -17,7 +16,6 @@
       flex-direction: column;
     }
 
-    /* ===== HEADER ===== */
     header {
       text-align: center;
       padding: 20px;
@@ -52,13 +50,11 @@
       color: #fff;
     }
 
-    /* Aktif sayfa */
     nav a.active {
       background-color: #ffd700;
       color: #1f1c2c;
     }
 
-    /* Hamburger menu (mobil) */
     .menu-toggle {
       display: none;
       position: absolute;
@@ -83,7 +79,6 @@
       }
     }
 
-    /* ===== MAIN ===== */
     main {
       flex: 1;
       display: flex;
@@ -107,47 +102,36 @@
     }
   </style>
 </head>
-
 <body>
 
 <!-- ===== HEADER ===== -->
-<div id="site-header"></div>
-
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    const headerContainer = document.getElementById("site-header");
-    headerContainer.innerHTML = data;
-
-    const nav = headerContainer.querySelector("nav");
-
-    // Hamburger toggle
-    const toggleBtn = document.createElement("div");
-    toggleBtn.classList.add("menu-toggle");
-    toggleBtn.innerHTML = "&#9776;";
-    toggleBtn.onclick = () => nav.classList.toggle("show");
-    headerContainer.prepend(toggleBtn);
-
-    // Aktif sayfa vurgusu
-    const links = nav.querySelectorAll("a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
+<header>
+  <h1>Welcome to Zinrex</h1>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="child-safety.html">Child Safety</a>
+    <a href="delete-account.html">Delete Account</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <main>
-  <img 
-    src="https://raw.githubusercontent.com/zinrexapp/zinrexapp/main/zinrexhomee.jpg" 
-    alt="Zinrex Home">
+  <img src="https://raw.githubusercontent.com/zinrexapp/zinrexapp/main/zinrexhomee.jpg" alt="Zinrex Home">
 </main>
 
 <footer>
   <p>&copy; 2026 Zinrex</p>
 </footer>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("header nav");
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 
 </body>
 </html>

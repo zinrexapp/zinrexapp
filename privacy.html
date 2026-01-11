@@ -160,31 +160,17 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<div id="site-header"></div>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-
-      // Aktif sayfa
-      const links = document.querySelectorAll('#site-header nav a');
-      links.forEach(link => {
-        if(link.href === window.location.href) {
-          link.classList.add('active');
-        }
-      });
-
-      // Hamburger toggle
-      const nav = document.querySelector('#site-header nav');
-      const toggleBtn = document.createElement('div');
-      toggleBtn.classList.add('menu-toggle');
-      toggleBtn.innerHTML = '&#9776;';
-      toggleBtn.onclick = () => nav.classList.toggle('show');
-      document.getElementById("site-header").prepend(toggleBtn);
-    });
-</script>
+<header>
+  <h1>Welcome to Zinrex</h1>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="child-safety.html">Child Safety</a>
+    <a href="delete-account.html">Delete Account</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <main>
   <h1>Privacy Policy</h1>

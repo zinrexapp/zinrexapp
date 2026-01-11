@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zinrex – Child Safety Standards</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #ffd700;
+    }
+
+    .updated {
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #ffd700;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      text-decoration: none;
+      color: #1f1c2c;
+      background-color: #ffd700;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #ff6347;
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <h1>Child Safety Standards</h1>
+  <div class="updated">Last Updated: January 2026</div>
+
+  <p>
+    Zinrex is committed to protecting children and preventing child sexual abuse
+    and exploitation (CSAE). We maintain strict safety standards to ensure that
+    our platform remains a secure environment for all users.
+  </p>
+
+  <h2>1. Prohibited Content</h2>
+  <p>
+    Zinrex strictly prohibits any content or behavior involving:
+  </p>
+  <ul>
+    <li>Child sexual abuse material (CSAM)</li>
+    <li>Sexual exploitation of minors</li>
+    <li>Grooming, predatory, or manipulative behavior</li>
+    <li>Harassment, abuse, or endangerment of children</li>
+  </ul>
+
+  <h2>2. Safety Measures</h2>
+  <ul>
+    <li>Users can report inappropriate content or users directly within the app</li>
+    <li>All reports are reviewed promptly by our moderation team</li>
+    <li>Accounts violating child safety rules are suspended or permanently banned</li>
+    <li>Repeat or severe violations result in immediate account termination</li>
+  </ul>
+
+  <h2>3. Reporting & Moderation</h2>
+  <p>
+    Zinrex provides in-app reporting tools that allow users to flag content or
+    accounts related to child safety concerns. Reports are handled with priority
+    and confidentiality.
+  </p>
+
+  <h2>4. Legal Compliance</h2>
+  <p>
+    Zinrex complies with all applicable child protection laws and regulations.
+    Confirmed cases of CSAM are reported to relevant regional and national
+    authorities, in accordance with legal obligations.
+  </p>
+
+  <h2>5. Cooperation with Authorities</h2>
+  <p>
+    We cooperate fully with law enforcement agencies and child protection
+    organizations when required by law to support investigations and ensure
+    child safety.
+  </p>
+
+  <h2>6. Contact</h2>
+  <p>
+    For child safety concerns or questions regarding our CSAE prevention
+    practices, please contact:
+  </p>
+  <p>
+    <strong>
+      <a href="mailto:info@zinrex.com">info@zinrex.com</a>
+    </strong>
+  </p>
+
+  <a class="button" href="index.html">Back to Home</a>
+
+  <footer>
+    © 2026 Zinrex
+  </footer>
+</main>
+
+</body>
+</html>

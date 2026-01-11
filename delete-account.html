@@ -10,25 +10,24 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #f0f0f0;
-      line-height: 1.6;
+      background: #000000;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* ===== HEADER ===== */
     header {
       text-align: center;
       padding: 20px;
       background-color: rgba(0,0,0,0.7);
+      width: 100%;  
     }
 
     header h1 {
       margin: 0 0 10px 0;
       font-size: 2.2rem;
-      color: #ffd700;
+      color: #ffffff;
     }
 
     nav {
@@ -58,69 +57,26 @@
       color: #1f1c2c;
     }
 
-    /* ===== MAIN ===== */
     main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 25px;
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
-    h1.main-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ffd700;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #ffcc00;
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
-
-    ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      text-decoration: none;
-      color: #1f1c2c;
-      background-color: #ffd700;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    a.button:hover {
-      background-color: #ff6347;
-      color: #fff;
+    main img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
     footer {
-      margin-top: 30px;
       text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
+      padding: 10px;
+      background-color: rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -130,10 +86,10 @@
 <header>
   <h1>Welcome to Zinrex</h1>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="child-safety.html">Child Safety</a>
-    <a href="delete-account.html" class="active">Delete Account</a>
+    <a href="delete-account.html">Delete Account</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>

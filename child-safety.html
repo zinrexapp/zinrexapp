@@ -19,7 +19,6 @@
       align-items: center;
     }
 
-    /* ===== HEADER ===== */
     header {
       text-align: center;
       padding: 20px;
@@ -84,7 +83,6 @@
       }
     }
 
-    /* ===== MAIN ===== */
     main {
       max-width: 800px;
       margin: 40px auto;
@@ -163,7 +161,6 @@
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <div id="site-header"></div>
 
 <script>
@@ -172,7 +169,6 @@
     .then(data => {
       document.getElementById("site-header").innerHTML = data;
 
-      // Aktif sayfa vurgusu
       const links = document.querySelectorAll('#site-header nav a');
       links.forEach(link => {
         if(link.href === window.location.href) {
@@ -180,7 +176,6 @@
         }
       });
 
-      // Hamburger menü toggle
       const nav = document.querySelector('#site-header nav');
       const toggleBtn = document.createElement('div');
       toggleBtn.classList.add('menu-toggle');
@@ -198,6 +193,15 @@
     Zinrex is committed to protecting children and preventing child sexual abuse
     and exploitation (CSAE). We maintain strict safety standards to ensure that
     our platform remains a secure environment for all users.
+  </p>
+
+  <h2>Safety Standards URL</h2>
+  <p>
+    Our child safety standards are publicly available at: 
+    <a href="https://zinrex.com/child-safety.html" target="_blank">
+      https://zinrex.com/child-safety.html
+    </a>.<br>
+    This link is accessible worldwide, active, and cannot be a PDF.
   </p>
 
   <h2>1. Prohibited Content</h2>

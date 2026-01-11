@@ -24,7 +24,6 @@
       padding: 20px;
       background-color: rgba(0,0,0,0.7);
       width: 100%;
-      position: relative;
     }
 
     header h1 {
@@ -38,6 +37,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 15px;
+      margin-top: 10px;
     }
 
     nav a {
@@ -59,30 +59,6 @@
       color: #1f1c2c;
     }
 
-    .menu-toggle {
-      display: none;
-      position: absolute;
-      right: 20px;
-      top: 30px;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: #ffd700;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-      }
-      nav.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-
     main {
       max-width: 800px;
       margin: 40px auto;
@@ -93,7 +69,7 @@
       flex: 1;
     }
 
-    h1 {
+    h1.main-title {
       font-size: 2rem;
       margin-bottom: 10px;
       text-align: center;
@@ -156,37 +132,32 @@
       font-size: 0.9rem;
       opacity: 0.9;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<div id="site-header"></div>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-
-      const links = document.querySelectorAll('#site-header nav a');
-      links.forEach(link => {
-        if(link.href === window.location.href) {
-          link.classList.add('active');
-        }
-      });
-
-      const nav = document.querySelector('#site-header nav');
-      const toggleBtn = document.createElement('div');
-      toggleBtn.classList.add('menu-toggle');
-      toggleBtn.innerHTML = '&#9776;';
-      toggleBtn.onclick = () => nav.classList.toggle('show');
-      document.getElementById("site-header").prepend(toggleBtn);
-    });
-</script>
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>Welcome to Zinrex</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="child-safety.html" class="active">Child Safety</a>
+    <a href="delete-account.html">Delete Account</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <main>
-  <h1>Child Safety Standards</h1>
+  <h1 class="main-title">Child Safety Standards</h1>
   <div class="updated">Last Updated: January 2026</div>
 
   <p>
@@ -200,14 +171,10 @@
     Our child safety standards are publicly available at: 
     <a href="https://zinrex.com/child-safety.html" target="_blank">
       https://zinrex.com/child-safety.html
-    </a>.<br>
-    This link is accessible worldwide, active, and cannot be a PDF.
+    </a>.
   </p>
 
   <h2>1. Prohibited Content</h2>
-  <p>
-    Zinrex strictly prohibits any content or behavior involving:
-  </p>
   <ul>
     <li>Child sexual abuse material (CSAM)</li>
     <li>Sexual exploitation of minors</li>
@@ -250,12 +217,9 @@
     practices, please contact:
   </p>
   <p>
-    <strong>
-      <a href="mailto:info@zinrex.com">info@zinrex.com</a>
-    </strong>
+    <strong><a href="mailto:info@zinrex.com">info@zinrex.com</a></strong>
   </p>
 
-  <a class="button" href="index.html">Back to Home</a>
 
   <footer>
     © 2026 Zinrex

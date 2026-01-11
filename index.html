@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zinrex Official</title>
+
   <style>
-    /* Sayfa genel stili */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #fff;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header stili */
     header {
       text-align: center;
       padding: 20px;
@@ -26,7 +25,7 @@
 
     header h1 {
       margin: 0 0 10px 0;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     nav a {
@@ -34,40 +33,54 @@
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
-      transition: color 0.3s;
     }
 
     nav a:hover {
       color: #ff6347;
     }
 
-    /* Ana içerik ortalanmış */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 20px;
     }
 
+    /* 1080x1920 resim için ideal ayar */
     main img {
-      width: 1500px;       /* PC’de tam genişlik */
-      max-width: 100%;     /* Ekranı aşmayacak şekilde küçülür */
-      height: auto;        /* Oranı bozulmasın */
-      display: block;
-      margin: 0 auto;      /* Ortala */
+      width: 100%;
+      max-width: 480px;      /* Telefon genişliği */
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
-    /* Footer stili */
     footer {
       text-align: center;
       padding: 10px;
       background-color: rgba(0,0,0,0.5);
     }
+
+    /* Mobilde daha iyi görünüm */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 10px;
+      }
+
+      main img {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Welcome to Zinrex</h1>
     <nav>
@@ -79,11 +92,14 @@
   </header>
 
   <main>
-    <img src="https://raw.githubusercontent.com/zinrexapp/zinrexapp/main/deneme.jpg" alt="Zinrex">
+    <img 
+      src="https://raw.githubusercontent.com/zinrexapp/zinrexapp/main/zinrexhome.jpg" 
+      alt="Zinrex Home">
   </main>
 
   <footer>
     <p>&copy; 2026 Zinrex</p>
   </footer>
+
 </body>
 </html>

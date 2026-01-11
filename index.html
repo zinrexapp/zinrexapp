@@ -114,27 +114,29 @@
 <div id="site-header"></div>
 
 <script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    const headerContainer = document.getElementById("site-header");
+    headerContainer.innerHTML = data;
 
-      // Aktif sayfa
-      const links = document.querySelectorAll('#site-header nav a');
-      links.forEach(link => {
-        if(link.href === window.location.href) {
-          link.classList.add('active');
-        }
-      });
+    const nav = headerContainer.querySelector("nav");
 
-      // Hamburger toggle
-      const nav = document.querySelector('#site-header nav');
-      const toggleBtn = document.createElement('div');
-      toggleBtn.classList.add('menu-toggle');
-      toggleBtn.innerHTML = '&#9776;';
-      toggleBtn.onclick = () => nav.classList.toggle('show');
-      document.getElementById("site-header").prepend(toggleBtn);
+    // Hamburger toggle
+    const toggleBtn = document.createElement("div");
+    toggleBtn.classList.add("menu-toggle");
+    toggleBtn.innerHTML = "&#9776;";
+    toggleBtn.onclick = () => nav.classList.toggle("show");
+    headerContainer.prepend(toggleBtn);
+
+    // Aktif sayfa vurgusu
+    const links = nav.querySelectorAll("a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
     });
+  });
 </script>
 
 <main>

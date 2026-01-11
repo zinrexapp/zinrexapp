@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Zinrex</title>
+
   <style>
     body {
       margin: 0;
@@ -12,12 +12,80 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #f0f0f0;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
     }
 
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      width: 100%;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+      color: #ffd700;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ff6347;
+      color: #fff;
+    }
+
+    /* Aktif sayfa */
+    nav a.active {
+      background-color: #ffd700;
+      color: #1f1c2c;
+    }
+
+    /* Hamburger menu (mobil) */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== MAIN ===== */
     main {
       background-color: rgba(0,0,0,0.7);
       padding: 30px;
@@ -26,6 +94,7 @@
       text-align: center;
       max-width: 500px;
       width: 90%;
+      margin: 40px 0;
     }
 
     h1 {
@@ -39,7 +108,7 @@
       font-size: 1.2rem;
     }
 
-    a {
+    a.button {
       display: inline-block;
       margin: 10px;
       padding: 12px 25px;
@@ -51,24 +120,53 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    a:hover {
+    a.button:hover {
       background-color: #ff6347;
       color: #fff;
     }
+
   </style>
 </head>
 <body>
-  <main>
-    <h1>Contact Us</h1>
-    <p>Email: <a href="mailto:info@zinrex.com">info@zinrex.com</a></p>
 
-     <!-- Telegram Button -->
-    <a href="https://t.me/zinrex" target="_blank">Join our Telegram</a>
-    
-    <p>Address: Kayalar Sokak daire 5, Orhangazi, Bursa, 16800</p>
-    
-    <br>
-    <a href="index.html">Back to Home</a>
-  </main>
+<!-- ===== HEADER ===== -->
+<div id="site-header"></div>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+
+      // Aktif sayfa
+      const links = document.querySelectorAll('#site-header nav a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.classList.add('active');
+        }
+      });
+
+      // Hamburger toggle
+      const nav = document.querySelector('#site-header nav');
+      const toggleBtn = document.createElement('div');
+      toggleBtn.classList.add('menu-toggle');
+      toggleBtn.innerHTML = '&#9776;';
+      toggleBtn.onclick = () => nav.classList.toggle('show');
+      document.getElementById("site-header").prepend(toggleBtn);
+    });
+</script>
+
+<main>
+  <h1>Contact Us</h1>
+  <p>Email: <a href="mailto:info@zinrex.com">info@zinrex.com</a></p>
+
+  <!-- Telegram Button -->
+  <a class="button" href="https://t.me/zinrex" target="_blank">Join our Telegram</a>
+  
+  <p>Address: Kayalar Sokak daire 5, Orhangazi, Bursa, 16800</p>
+  
+  <a class="button" href="index.html">Back to Home</a>
+</main>
+
 </body>
 </html>

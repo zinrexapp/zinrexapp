@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy – Zinrex</title>
+  <title>Zinrex – Privacy Policy</title>
 
   <style>
     body {
@@ -11,59 +11,91 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0,0,0,0.5);
-    }
-
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+      color: #f0f0f0;
       line-height: 1.6;
     }
 
-    h1, h2 {
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
       color: #ffd700;
     }
 
+    .updated {
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
     ul {
-      padding-left: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
 
     a {
       color: #ffd700;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      text-decoration: none;
+      color: #1f1c2c;
+      background-color: #ffd700;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #ff6347;
+      color: #fff;
+    }
+
     footer {
+      margin-top: 30px;
       text-align: center;
-      padding: 10px;
-      background-color: rgba(0,0,0,0.5);
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Privacy Policy</h1>
-  <p>Last Updated: January 2026</p>
-</header>
-
 <main>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last Updated: January 2026</div>
+
   <p>
     Zinrex respects user privacy. This Privacy Policy explains how personal data
     is collected, used, and protected in compliance with
@@ -107,6 +139,7 @@
     <li>Request account and data deletion</li>
     <li>Object to data processing where applicable</li>
   </ul>
+
   <p>
     Requests can be submitted via:
     <a href="mailto:info@zinrex.com">info@zinrex.com</a>
@@ -127,17 +160,15 @@
   <h2>8. Contact</h2>
   <p>
     For privacy-related inquiries:<br>
-    <a href="mailto:info@zinrex.com">info@zinrex.com</a>
+    <strong>info@zinrex.com</strong>
   </p>
 
-  <p>
-    <a href="index.html">← Back to Home</a>
-  </p>
+  <a class="button" href="index.html">Back to Home</a>
+
+  <footer>
+    © 2026 Zinrex
+  </footer>
 </main>
-
-<footer>
-  <p>&copy; 2026 Zinrex</p>
-</footer>
 
 </body>
 </html>

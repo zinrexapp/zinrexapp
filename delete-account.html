@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zinrex – Account & Data Deletion</title>
+
   <style>
     body {
       margin: 0;
@@ -12,8 +13,78 @@
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #f0f0f0;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.2rem;
+      color: #ffd700;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ff6347;
+      color: #fff;
+    }
+
+    /* Aktif sayfa */
+    nav a.active {
+      background-color: #ffd700;
+      color: #1f1c2c;
+    }
+
+    /* Hamburger menu (mobil) */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== MAIN ===== */
     main {
       max-width: 800px;
       margin: 40px auto;
@@ -21,6 +92,7 @@
       background-color: rgba(0,0,0,0.7);
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      flex: 1;
     }
 
     h1 {
@@ -72,62 +144,91 @@
   </style>
 </head>
 <body>
-  <main>
-    <h1>ZINREX – Account & Data Deletion Policy</h1>
 
-    <p>
-      This page explains how users of the <strong>Zinrex</strong> mobile application
-      can request deletion of their account and associated personal data.
-    </p>
+<!-- ===== HEADER ===== -->
+<div id="site-header"></div>
 
-    <h2>How to request account deletion</h2>
-    <p>
-      To request deletion of your Zinrex account, please follow the steps below:
-    </p>
-    <ul>
-      <li>Send an email to <strong>info@zinrex.com</strong></li>
-      <li>Use the subject line: <strong>“Zinrex Account Deletion Request”</strong></li>
-      <li>Include the phone number used to register your Zinrex account</li>
-    </ul>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
 
-    <a class="button" href="mailto:info@zinrex.com?subject=Zinrex%20Account%20Deletion%20Request">
-      Request Account Deletion
-    </a>
+      // Aktif sayfa
+      const links = document.querySelectorAll('#site-header nav a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.classList.add('active');
+        }
+      });
 
-    <h2>Data that will be deleted</h2>
-    <p>
-      Once your request is verified and approved, the following data will be permanently deleted:
-    </p>
-    <ul>
-      <li>User profile information (username, photos, bio)</li>
-      <li>Registered phone number and account identifiers</li>
-      <li>Messages, comments, likes, and social interactions</li>
-      <li>In-app balance, virtual items, and subscription data</li>
-      <li>Device and usage data associated with the account</li>
-    </ul>
+      // Hamburger toggle
+      const nav = document.querySelector('#site-header nav');
+      const toggleBtn = document.createElement('div');
+      toggleBtn.classList.add('menu-toggle');
+      toggleBtn.innerHTML = '&#9776;';
+      toggleBtn.onclick = () => nav.classList.toggle('show');
+      document.getElementById("site-header").prepend(toggleBtn);
+    });
+</script>
 
-    <h2>Data retention</h2>
-    <ul>
-      <li>All personal data is permanently deleted within <strong>30 days</strong></li>
-      <li>
-        Certain data may be retained only if required by law
-        (e.g. financial records or fraud prevention)
-      </li>
-      <li>
-        Any retained data is securely stored and never used for marketing purposes
-      </li>
-    </ul>
+<main>
+  <h1>ZINREX – Account & Data Deletion Policy</h1>
 
-    <h2>Contact</h2>
-    <p>
-      For questions regarding account or data deletion, please contact:
-      <br>
-      <strong>info@zinrex.com</strong>
-    </p>
+  <p>
+    This page explains how users of the <strong>Zinrex</strong> mobile application
+    can request deletion of their account and associated personal data.
+  </p>
 
-    <footer>
-      © 2026 Zinrex
-    </footer>
-  </main>
+  <h2>How to request account deletion</h2>
+  <p>
+    To request deletion of your Zinrex account, please follow the steps below:
+  </p>
+  <ul>
+    <li>Send an email to <strong>info@zinrex.com</strong></li>
+    <li>Use the subject line: <strong>“Zinrex Account Deletion Request”</strong></li>
+    <li>Include the phone number used to register your Zinrex account</li>
+  </ul>
+
+  <a class="button" href="mailto:info@zinrex.com?subject=Zinrex%20Account%20Deletion%20Request">
+    Request Account Deletion
+  </a>
+
+  <h2>Data that will be deleted</h2>
+  <p>
+    Once your request is verified and approved, the following data will be permanently deleted:
+  </p>
+  <ul>
+    <li>User profile information (username, photos, bio)</li>
+    <li>Registered phone number and account identifiers</li>
+    <li>Messages, comments, likes, and social interactions</li>
+    <li>In-app balance, virtual items, and subscription data</li>
+    <li>Device and usage data associated with the account</li>
+  </ul>
+
+  <h2>Data retention</h2>
+  <ul>
+    <li>All personal data is permanently deleted within <strong>30 days</strong></li>
+    <li>
+      Certain data may be retained only if required by law
+      (e.g. financial records or fraud prevention)
+    </li>
+    <li>
+      Any retained data is securely stored and never used for marketing purposes
+    </li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>
+    For questions regarding account or data deletion, please contact:
+    <br>
+    <strong>info@zinrex.com</strong>
+  </p>
+
+  <footer>
+    © 2026 Zinrex
+  </footer>
+</main>
+
 </body>
 </html>
